@@ -2,6 +2,7 @@
 
 <templates>
     <t t-name="my_module.Child" owl="1">
+        <t t-slot="default" />
         <p>
             <t t-out="props.title" />
         </p>

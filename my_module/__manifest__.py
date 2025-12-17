@@ -20,6 +20,8 @@
             "my_module/static/src/components/example/example.xml",
             "my_module/static/src/components/child/child.js",
             "my_module/static/src/components/child/child.xml",
+            "my_module/static/src/components/counter/counter.js",
+            "my_module/static/src/components/counter/counter.xml",
         ]
     }
 

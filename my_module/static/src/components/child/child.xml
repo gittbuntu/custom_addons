@@ -5,5 +5,10 @@
         <p>
             <t t-out="props.title" />
         </p>
+        <ol>
+            <t t-foreach="props.list" t-as="item" t-key="item_index">
+                <li t-out="item" />
+            </t>
+        </ol>
     </t>
 </templates>

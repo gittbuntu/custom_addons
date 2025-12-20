@@ -8,6 +8,8 @@
     'depends': [
         # "web",
         "sale",
+        'base',
+        'point_of_sale'
     ],
     'data': [
         "views/sales_order_views.xml",
@@ -22,7 +24,14 @@
             "my_module/static/src/components/child/child.xml",
             "my_module/static/src/components/counter/counter.js",
             "my_module/static/src/components/counter/counter.xml",
-        ]
-    }
+
+        ],
+        # "point_of_sale._assets_pos": [
+        #     "my_module/static/src/ProductScreen.js"
+        # ],
+    },
+    "auto_install": False,
+    "installable": True,
+    'license': 'OPL-1',
 
 }

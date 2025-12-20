@@ -53,3 +53,49 @@ Component lifecycyle
 1. Creation
 2. Update
 3. Deletion
+--------------------------------------------
+Hooks
+1. magic function that hook into a component
+2. usaually starts with on or use
+3. lifecycle hooks
+4. other hooks
+5. Golden rule: can only be used setup()
+--------------------------------------------
+lifecycle hooks
+onWillStart: before being is rendered
+onMounted: After being mounted in DOM
+on WillDestroy: before removal from DOM
+-----------------------------------------
+Composibility
+Hooks can be compsed
+hook within another hook
+---------------------------------------
+
+State another hook
+1. useState({"key":"value"})
+2. similar to the react version
+3. observer pattern
+4. re-renders component on update
+
+Best practices
+1. a single source of truth (for each piece of state)
+2. state should flow from parent to child
+3. each "piece of state" is owned by 1 entity
+4. only owner should update state
+5. donot modify your props
+6. start with a naive implementation
+7. only if needed, move to a more complex one
+
+shared state
+1. move useState in a common ancestor component
+2. propagate state to child through props
+						component							
+						(state value)
+				A								B			
+				(props.value)				(props.value)
+
+Reactive primitive 
+1. core of state mangment
+2. reactive({"key":"value"}, callback);
+3. usestate is wraper with callback bieng the render function of the component
+4. callback optional

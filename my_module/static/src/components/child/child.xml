@@ -5,6 +5,11 @@
         <t t-slot="default" />
         <p>
             <t t-out="props.title" />
+            <!-- we define usestate-hook in js file line #14-->
+            <!-- <h1>Counter: <t t-out="state.counter" /></h1>  -->
+            <!-- now we increament this counter value through props so we move line 14 from child to
+            its parent example.js file -->
+            <h1>Counter: <t t-out="props.counter" /></h1>
         </p>
         <ol>
             <t t-foreach="props.list" t-as="item" t-key="item_index">

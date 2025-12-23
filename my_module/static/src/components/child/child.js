@@ -1,6 +1,11 @@
 /** @odoo-module */
-
-import { Component, onWillStart, onWillDestroy, useState } from "@odoo/owl";
+import {
+  Component,
+  onWillStart,
+  onWillDestroy,
+  useState,
+  useRef,
+} from "@odoo/owl";
 
 export class Child extends Component {
   static template = "my_module.Child";
@@ -12,7 +17,12 @@ export class Child extends Component {
   };
   setup() {
     // this.state = useState({ counter: 0 });
+    this.myInputRef = useRef("my-input");
     onWillStart(() => console.log("Child Hook."));
     // onWillDestroy(() => alert("Destroyed."));
+  }
+
+  focusMyInput() {
+    this.myInputRef.el.focus();
   }
 }

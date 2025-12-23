@@ -7,6 +7,7 @@ import { usePos } from "@point_of_sale/app/store/pos_hook";
 import { useService } from "@web/core/utils/hooks";
 import { ErrorPopup } from "@point_of_sale/app/errors/popups/error_popup";
 let check_dol = true;
+let num = false;
 patch(ProductScreen.prototype, {
   setup() {
     super.setup(...arguments);
@@ -53,6 +54,7 @@ patch(ProductScreen.prototype, {
       }
     }
     if (buttonValue === "quantity") {
+      num = false;
       if (config.qty_detail) {
         if (config_otp && !otp) {
           result = await order.checkPswd();
@@ -67,9 +69,11 @@ patch(ProductScreen.prototype, {
       if (config.discount_app) {
         if (config_otp && !otp) {
           result = await order.checkPswd();
+          // num = true;
         }
         if (!config_otp) {
           result = await order.checkPswd();
+          num = true;
         }
       }
     }
@@ -78,26 +82,28 @@ patch(ProductScreen.prototype, {
       if (config.price_change) {
         if (config_otp && !otp) {
           result = await order.checkPswd();
+          // num = true;
         }
         if (!config_otp) {
           result = await order.checkPswd();
+          num = true;
         }
       }
     }
 
-    if (!isNaN(buttonValue)) {
-      console.log("this is number", buttonValue);
-      const currentValue = this.numberBuffer.get();
-      console.log("currentValue", currentValue);
-      if (currentValue) {
-        this.popup.add(ErrorPopup, {
-          title: _t("More Quantuty"),
-          body: _t("For more quantities plz select product again"),
-        });
-        return;
+    if (num == false) {
+      if (!isNaN(buttonValue)) {
+        console.log("this is number", buttonValue);
+        const currentValue = this.numberBuffer.get();
+        console.log("currentValue", currentValue);
+        if (currentValue) {
+          this.popup.add(ErrorPopup, {
+            title: _t("More Quantuty"),
+            body: _t("For more quantities plz select product again"),
+          });
+          return;
+        }
       }
-
-      //   this.numberBuffer.reset();
     }
 
     if (result) {

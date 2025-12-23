@@ -113,3 +113,9 @@ el property is null at first
 convention: Ref suffix
 owl provides backbone
 dom can be manipulated by you
+-----------------------------------
+Environment(env)
+1. Shared object that containd=s stuff (like services)
+2. akin to python framework environment
+3. a tree like structure
+

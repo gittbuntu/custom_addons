@@ -1,7 +1,7 @@
 /** @odoo-module */
 import { registry } from "@web/core/registry";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, useSubEnv } from "@odoo/owl";
 import { Child } from "../child/child";
 
 export class Example extends Component {
@@ -9,6 +9,7 @@ export class Example extends Component {
   static components = { Child };
 
   setup() {
+    useSubEnv({ data: "Info" });
     this.message = "Hello!";
     this.state = useState({ counter: 0 });
   }

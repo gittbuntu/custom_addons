@@ -18,5 +18,6 @@
         </ol>
         <button class="btn btn-primary m-5" t-on-click="focusMyInput"> Focus Input</button>
         <input class="form-input input m-5" t-ref="my-input"></input>
+        <t t-out="env.data" />
     </t>
 </templates>

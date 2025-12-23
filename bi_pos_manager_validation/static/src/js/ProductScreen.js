@@ -15,6 +15,7 @@ patch(ProductScreen.prototype, {
     this.numberBuffer = useService("number_buffer");
     this.popup = useService("popup");
   },
+
   async onNumpadClick(buttonValue) {
     let config = this.pos.config;
     let config_otp = config.one_time_valid;

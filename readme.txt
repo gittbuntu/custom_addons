@@ -99,3 +99,17 @@ Reactive primitive
 2. reactive({"key":"value"}, callback);
 3. usestate is wraper with callback bieng the render function of the component
 4. callback optional
+-----------------------------
+Ref hook
+1. useful way to interact with internal part of a component
+2. targeted using t-ref
+3. useRef()
+<input t-ref="input"/>
+inputRef = useRef("input");
+inputRef.el.focus();
+---
+el is set to the html element after being mounted on dom
+el property is null at first
+convention: Ref suffix
+owl provides backbone
+dom can be manipulated by you

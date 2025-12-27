@@ -119,3 +119,35 @@ Environment(env)
 2. akin to python framework environment
 3. a tree like structure
 
+subenv
+some component may have subenv 
+1. env scope to a sub-tree
+2. useSubEnv({"key":"value"})
+3. useChildSubEnv({key:value})
+4. created envireronment are frozen
+5. can be called an arbitrary number of times
+---------------------------------
+Service
+1. stays a live for the duration of the web client
+2. provide some functionality tot he rest of the web client
+3. can be used to hold state
+4. e.g: notification, ORM, action, bus, etc
+5. kept in a category on the registry
+
+sevice API
+1. satrt() NOT setup()
+2. can have dependencies
+3. can be utilized with useSErvice() hook
+4. must be registered in "services"
+
+* services are simple javascript object that ahve an start function
+* if we want to use service inside another service use dependencies
+
+useService() hook
+e.g: use service hook in example.js file
+use return in object define in my_service.js file.
+--------------------------
+
+ORM
+1.facitate easy access to the backend ORM
+2. Call public methods of models

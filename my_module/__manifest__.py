@@ -24,6 +24,7 @@
             "my_module/static/src/components/child/child.xml",
             "my_module/static/src/components/counter/counter.js",
             "my_module/static/src/components/counter/counter.xml",
+            "my_module/static/src/lib/*",
 
         ],
         # "point_of_sale._assets_pos": [

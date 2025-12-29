@@ -148,6 +148,6 @@ e.g: use service hook in example.js file
 use return in object define in my_service.js file.
 --------------------------
 
-ORM
+ORM (orm is kind a like xmlrpc or jsonrpc by which we can use CRUD operations call a public methods not private methods
 1.facitate easy access to the backend ORM
 2. Call public methods of models
